@@ -6,24 +6,33 @@ namespace Part_6__Oddsum
     {
         static void Main(string[] args)
         {
-            //Variables
+            //Variables.
             double count;
             double added;
-            //Variable Values
+            double total;
+            //Variable Values.
             count = 0;
             added = 1;
+            total = 1;
 
-            Console.WriteLine("This Application sums odd numbers.");
+            //Explanes program
+            Console.WriteLine("This application sums odd numbers.");
             Console.WriteLine("Enter a number to sum the numbers to.");
-            double.TryParse(Console.ReadLine(), out count);
-            Console.WriteLine("--------------------");
 
-            for (int i = 1; i <= count; i++)
+            //Takes user input
+            double.TryParse(Console.ReadLine(), out count);
+
+            Console.WriteLine("--------------------");
+            Console.WriteLine($"{added}"); // Prints inital number one.
+            for (int i = 2; i <= count; i++)
             {
-            //Odd Counter
-                Console.WriteLine($"{added}");
+            //Odd Counter.
                 added = added + 2;
+                total = total + added;
+                Console.WriteLine($"{added}");
             }
+            Console.WriteLine("--------------------");
+            Console.WriteLine($"The total is {total}");
             Console.WriteLine("--------------------");
         }
     }
